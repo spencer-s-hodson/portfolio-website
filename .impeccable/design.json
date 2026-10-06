@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-06T16:36:00.000Z",
+  "title": "Design System: Quiet Index Folio",
+  "extensions": {
+    "colorMeta": {
+      "stage": {
+        "role": "neutral",
+        "displayName": "Charcoal Stage",
+        "canonical": "#121212",
+        "tonalRamp": [
+          "#0a0a0a",
+          "#121212",
+          "#1c1c1c",
+          "#2a2a2a",
+          "#3d3d3d",
+          "#5a5a5a",
+          "#8a8a8a",
+          "#c8c8c8"
+        ]
+      },
+      "sheet": {
+        "role": "neutral",
+        "displayName": "Warm Sheet",
+        "canonical": "#f4f2ee",
+        "tonalRamp": [
+          "#2a2722",
+          "#4a463f",
+          "#7a7368",
+          "#a89f92",
+          "#d6d0c6",
+          "#e8e4dc",
+          "#f4f2ee",
+          "#fbfaf7"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Near-Black Ink",
+        "canonical": "#161616",
+        "tonalRamp": [
+          "#0c0c0c",
+          "#161616",
+          "#2a2a2a",
+          "#444444",
+          "#666666",
+          "#8e8e8e",
+          "#b8b8b8",
+          "#e8e8e8"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Warm Soft Ink",
+        "canonical": "#4a463f",
+        "tonalRamp": [
+          "#1a1814",
+          "#2e2b26",
+          "#4a463f",
+          "#6b655c",
+          "#8f877b",
+          "#b3aa9c",
+          "#d6d0c6",
+          "#f0ebe4"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline Rule",
+        "canonical": "#d6d0c6",
+        "tonalRamp": [
+          "#3a352e",
+          "#5c554c",
+          "#7e766b",
+          "#a0988c",
+          "#c4bcb0",
+          "#d6d0c6",
+          "#e8e4dc",
+          "#f7f5f1"
+        ]
+      },
+      "mark": {
+        "role": "primary",
+        "displayName": "Signal Orange",
+        "canonical": "#ff5a1f",
+        "tonalRamp": [
+          "#3d1408",
+          "#6b2410",
+          "#9e3516",
+          "#d4481a",
+          "#ff5a1f",
+          "#ff7a4a",
+          "#ffab8a",
+          "#ffe2d6"
+        ]
+      },
+      "mark-ink": {
+        "role": "neutral",
+        "displayName": "Mark Wash Ink",
+        "canonical": "#fff7f2",
+        "tonalRamp": [
+          "#4a2a1a",
+          "#7a4a32",
+          "#a86e4e",
+          "#d4a080",
+          "#ebc8b0",
+          "#f5e0d2",
+          "#fff7f2",
+          "#fffbf8"
+        ]
+      },
+      "pill": {
+        "role": "neutral",
+        "displayName": "Pill Shell",
+        "canonical": "#1c1c1c",
+        "tonalRamp": [
+          "#0a0a0a",
+          "#1c1c1c",
+          "#2e2e2e",
+          "#454545",
+          "#636363",
+          "#8a8a8a",
+          "#b5b5b5",
+          "#e0e0e0"
+        ]
+      },
+      "pill-ink": {
+        "role": "neutral",
+        "displayName": "Pill Ink",
+        "canonical": "#f4f2ee",
+        "tonalRamp": [
+          "#2a2722",
+          "#4a463f",
+          "#7a7368",
+          "#a89f92",
+          "#d6d0c6",
+          "#e8e4dc",
+          "#f4f2ee",
+          "#fbfaf7"
+        ]
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Focus Mark",
+        "canonical": "#ff5a1f",
+        "tonalRamp": [
+          "#3d1408",
+          "#6b2410",
+          "#9e3516",
+          "#d4481a",
+          "#ff5a1f",
+          "#ff7a4a",
+          "#ffab8a",
+          "#ffe2d6"
+        ]
+      },
+      "face-out-hi": {
+        "role": "neutral",
+        "displayName": "Face-Out High",
+        "canonical": "#1a1a1a",
+        "tonalRamp": [
+          "#080808",
+          "#1a1a1a",
+          "#2c2c2c",
+          "#424242",
+          "#5e5e5e",
+          "#828282",
+          "#aeaeae",
+          "#dcdcdc"
+        ]
+      },
+      "face-out-lo": {
+        "role": "neutral",
+        "displayName": "Face-Out Low",
+        "canonical": "#0c0c0c",
+        "tonalRamp": [
+          "#050505",
+          "#0c0c0c",
+          "#1a1a1a",
+          "#2e2e2e",
+          "#484848",
+          "#6a6a6a",
+          "#969696",
+          "#c8c8c8"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Home cover name at hero clamp; Bricolage 600, tight tracking."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page titles on Experience and Projects."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Index labels, role line, course/project/face-out titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Supporting copy and summaries on the sheet."
+      },
+      "label": {
+        "displayName": "Meta Label",
+        "purpose": "Uppercase meta: Index, periods, years, stacks, link row."
+      },
+      "mono": {
+        "displayName": "Code Ref",
+        "purpose": "Inline path/file references only."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sheet-lift",
+        "value": "0 24px 80px rgb(0 0 0 / 0.35)",
+        "purpose": "Lifts the warm folio off the charcoal stage."
+      },
+      {
+        "name": "pill-float",
+        "value": "0 10px 40px rgb(0 0 0 / 0.35)",
+        "purpose": "Fixed floating pill nav cast."
+      },
+      {
+        "name": "face-out-rim",
+        "value": "inset 0 1px 0 rgb(255 255 255 / 0.06)",
+        "purpose": "Subtle top rim on the dark face-out plate."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Shared easing for settle, index, stamp, pill, and face-out."
+      },
+      {
+        "name": "clock",
+        "value": "420ms",
+        "purpose": "Single motion clock for all interactive transitions."
+      },
+      {
+        "name": "sheet-settle",
+        "value": "sheet-settle 420ms cubic-bezier(0.22, 1, 0.36, 1) both",
+        "purpose": "Entrance: sheet fades up 0.8rem into place."
+      },
+      {
+        "name": "index-nudge",
+        "value": "transform translateX(0.35rem)",
+        "purpose": "Index row hover/focus/active lateral nudge."
+      },
+      {
+        "name": "stamp-tilt",
+        "value": "transform rotate(-2deg)",
+        "purpose": "Stamp hover micro-rotation."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "folio-collapse",
+        "value": "720px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Stamp",
+      "kind": "button",
+      "refersTo": "stamp",
+      "description": "Primary outline CTA on the sheet — Get in touch and plate actions.",
+      "html": "<a class=\"ds-stamp\" href=\"#\">Get in touch</a>",
+      "css": ".ds-stamp { display: inline-flex; align-items: center; justify-content: center; min-height: 3rem; padding: 0.75rem 1.25rem; border: 2px solid #161616; border-radius: 999px; color: #161616; background: transparent; font-family: \"Bricolage Grotesque\", system-ui, sans-serif; font-weight: 600; letter-spacing: -0.02em; text-decoration: none; transition: background-color 420ms cubic-bezier(0.22, 1, 0.36, 1), color 420ms cubic-bezier(0.22, 1, 0.36, 1), border-color 420ms cubic-bezier(0.22, 1, 0.36, 1), transform 420ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-stamp:hover { background: #161616; color: #f4f2ee; transform: rotate(-2deg); } .ds-stamp:focus-visible { outline: 2px solid #ff5a1f; outline-offset: 3px; }"
+    },
+    {
+      "name": "Stamp on Stage",
+      "kind": "button",
+      "refersTo": "stamp-on-stage",
+      "description": "Stamp variant on the dark face-out plate.",
+      "html": "<a class=\"ds-stamp-on-stage\" href=\"#\">Open projects</a>",
+      "css": ".ds-stamp-on-stage { display: inline-flex; align-items: center; justify-content: center; min-height: 3rem; padding: 0.75rem 1.25rem; border: 2px solid #f4f2ee; border-radius: 999px; color: #f4f2ee; background: transparent; font-family: \"Bricolage Grotesque\", system-ui, sans-serif; font-weight: 600; letter-spacing: -0.02em; text-decoration: none; transition: background-color 420ms cubic-bezier(0.22, 1, 0.36, 1), color 420ms cubic-bezier(0.22, 1, 0.36, 1), transform 420ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-stamp-on-stage:hover { background: #f4f2ee; color: #121212; transform: rotate(-2deg); } .ds-stamp-on-stage:focus-visible { outline: 2px solid #ff5a1f; outline-offset: 3px; }"
+    },
+    {
+      "name": "Pill Nav",
+      "kind": "nav",
+      "refersTo": "pill-nav",
+      "description": "Fixed charcoal capsule nav on the stage — Home, Projects, Experience.",
+      "html": "<nav class=\"ds-pill-nav\" aria-label=\"Primary\"><a class=\"ds-pill-link\" href=\"#\" aria-current=\"page\"><svg class=\"ds-pill-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-9.5Z\"/></svg><span>Home</span></a><a class=\"ds-pill-link\" href=\"#\"><svg class=\"ds-pill-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M4 7.5h16M4 12h16M4 16.5h10\"/><path d=\"M7 4.5h10a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2Z\"/></svg><span>Projects</span></a><a class=\"ds-pill-link\" href=\"#\"><svg class=\"ds-pill-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M8 7V5.8A1.8 1.8 0 0 1 9.8 4h4.4A1.8 1.8 0 0 1 16 5.8V7\"/><rect x=\"4\" y=\"7\" width=\"16\" height=\"13\" rx=\"2\"/><path d=\"M4 12h16\"/></svg><span>Experience</span></a></nav>",
+      "css": ".ds-pill-nav { display: inline-flex; gap: 0.2rem; padding: 0.35rem; border-radius: 999px; background: #1c1c1c; color: #f4f2ee; box-shadow: 0 10px 40px rgb(0 0 0 / 0.35); } .ds-pill-link { display: inline-flex; align-items: center; gap: 0.45rem; min-height: 2.55rem; padding: 0.45rem 0.9rem; border-radius: 999px; color: #f4f2ee; text-decoration: none; font-family: \"Geist Sans\", system-ui, sans-serif; font-size: 0.8rem; letter-spacing: 0.02em; opacity: 0.72; transition: opacity 420ms cubic-bezier(0.22, 1, 0.36, 1), background-color 420ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-pill-link:hover, .ds-pill-link[aria-current=\"page\"] { opacity: 1; background: rgb(255 255 255 / 0.1); } .ds-pill-link:focus-visible { outline: 2px solid #ff5a1f; outline-offset: 3px; } .ds-pill-icon { width: 1rem; height: 1rem; flex-shrink: 0; }"
+    },
+    {
+      "name": "Index Row",
+      "kind": "custom",
+      "refersTo": "index-row",
+      "description": "Numbered index button that drives the face-out plate; orange marks active only.",
+      "html": "<button class=\"ds-index-row\" type=\"button\" data-active=\"true\"><span class=\"ds-index-number\">01</span><span class=\"ds-index-label\">Featured</span><span class=\"ds-index-blurb\">Lead plate</span><span class=\"ds-index-course\" aria-hidden=\"true\"></span></button>",
+      "css": ".ds-index-row { position: relative; display: grid; grid-template-columns: 3rem 1fr auto; gap: 1rem; align-items: baseline; width: 100%; padding: 1.1rem 0.35rem; border: 0; border-top: 1px solid #d6d0c6; border-bottom: 1px solid #d6d0c6; text-align: left; background: transparent; color: #161616; cursor: pointer; transition: background-color 420ms cubic-bezier(0.22, 1, 0.36, 1), transform 420ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-index-row:hover, .ds-index-row:focus-visible, .ds-index-row[data-active=\"true\"] { background: color-mix(in srgb, #ff5a1f 8%, transparent); transform: translateX(0.35rem); } .ds-index-row:focus-visible { outline: 2px solid #ff5a1f; outline-offset: 3px; } .ds-index-number { font-family: \"Geist Sans\", system-ui, sans-serif; font-variant-numeric: tabular-nums; font-size: 0.85rem; letter-spacing: 0.04em; color: #4a463f; transition: color 420ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-index-row[data-active=\"true\"] .ds-index-number { color: #ff5a1f; } .ds-index-label { font-family: \"Bricolage Grotesque\", system-ui, sans-serif; font-weight: 600; font-size: 1.5rem; letter-spacing: -0.035em; line-height: 0.95; } .ds-index-blurb { font-family: \"Geist Sans\", system-ui, sans-serif; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: #4a463f; justify-self: end; text-align: right; } .ds-index-course { position: absolute; top: 0.85rem; right: 0; bottom: 0.85rem; width: 0.28rem; border-radius: 999px; background: #ff5a1f; transform: scaleY(1); transform-origin: center; }"
+    },
+    {
+      "name": "Face-Out Plate",
+      "kind": "custom",
+      "refersTo": "index-row-active",
+      "description": "Dark fold plate that crossfades with the active index entry.",
+      "html": "<div class=\"ds-face-out\"><div class=\"ds-face-out-panel\" data-active=\"true\"><span class=\"ds-face-number\">01</span><h2 class=\"ds-face-title\">Lead system</h2><p class=\"ds-face-body\">One provisional plate for the work worth judging first.</p><p class=\"ds-face-meta\">2026 · Next.js · TypeScript</p><a class=\"ds-stamp-on-stage\" href=\"#\">Open projects</a></div></div>",
+      "css": ".ds-face-out { position: relative; min-height: 13rem; padding: clamp(1.5rem, 4vw, 2.5rem); border-radius: 0 0 1.75rem 1.75rem; background: linear-gradient(160deg, #1a1a1a 0%, #121212 55%, #0c0c0c 100%); color: #f4f2ee; box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.06); overflow: hidden; } .ds-face-out-panel { display: grid; gap: 0.75rem; } .ds-face-number { font-family: \"Geist Sans\", system-ui, sans-serif; font-variant-numeric: tabular-nums; font-size: 0.85rem; letter-spacing: 0.04em; color: #ff5a1f; } .ds-face-title { margin: 0; font-family: \"Bricolage Grotesque\", system-ui, sans-serif; font-weight: 600; font-size: 1.875rem; letter-spacing: -0.035em; line-height: 0.95; color: #f4f2ee; } .ds-face-body { margin: 0; max-width: 36rem; font-family: \"Geist Sans\", system-ui, sans-serif; font-size: 1rem; line-height: 1.75; color: color-mix(in srgb, #f4f2ee 72%, transparent); } .ds-face-meta { margin: 0; font-family: \"Geist Sans\", system-ui, sans-serif; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: color-mix(in srgb, #f4f2ee 55%, transparent); } .ds-stamp-on-stage { display: inline-flex; align-items: center; justify-content: center; min-height: 3rem; margin-top: 0.5rem; padding: 0.75rem 1.25rem; border: 2px solid #f4f2ee; border-radius: 999px; color: #f4f2ee; background: transparent; font-family: \"Bricolage Grotesque\", system-ui, sans-serif; font-weight: 600; letter-spacing: -0.02em; text-decoration: none; width: fit-content; transition: background-color 420ms cubic-bezier(0.22, 1, 0.36, 1), color 420ms cubic-bezier(0.22, 1, 0.36, 1), transform 420ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-stamp-on-stage:hover { background: #f4f2ee; color: #121212; transform: rotate(-2deg); }"
+    },
+    {
+      "name": "Course Band",
+      "kind": "custom",
+      "refersTo": "index-row",
+      "description": "Experience course: period meta beside title and summary on the sheet.",
+      "html": "<article class=\"ds-course\"><p class=\"ds-course-meta\">2024 — Present</p><div><h2 class=\"ds-course-title\">AI Native Software Engineer</h2><p class=\"ds-course-company\">Placeholder Co.</p><p class=\"ds-course-body\">Replace employers, titles, and summaries in content.</p></div></article>",
+      "css": ".ds-course { display: grid; grid-template-columns: minmax(7rem, 9rem) 1fr; gap: 1rem 1.5rem; padding: 1.35rem 0; border-top: 1px solid #d6d0c6; color: #161616; } .ds-course-meta { margin: 0; padding-top: 0.25rem; font-family: \"Geist Sans\", system-ui, sans-serif; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: #4a463f; font-variant-numeric: tabular-nums; } .ds-course-title { margin: 0; font-family: \"Bricolage Grotesque\", system-ui, sans-serif; font-weight: 600; font-size: 1.875rem; letter-spacing: -0.035em; line-height: 0.95; } .ds-course-company { margin: 0.25rem 0 0; font-family: \"Geist Sans\", system-ui, sans-serif; font-size: 1.125rem; color: #4a463f; } .ds-course-body { margin: 0.75rem 0 0; max-width: 42rem; font-family: \"Geist Sans\", system-ui, sans-serif; font-size: 1rem; line-height: 1.75; color: #4a463f; }"
+    },
+    {
+      "name": "Placeholder Note",
+      "kind": "chip",
+      "refersTo": "placeholder-note",
+      "description": "Tiny uppercase capsule marking provisional copy only.",
+      "html": "<span class=\"ds-placeholder-note\">Placeholder content</span>",
+      "css": ".ds-placeholder-note { display: inline-block; padding: 0.15rem 0.45rem; border-radius: 999px; background: color-mix(in srgb, #161616 8%, transparent); color: #4a463f; font-family: \"Geist Sans\", system-ui, sans-serif; font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Meta Link",
+      "kind": "custom",
+      "refersTo": "pill-link",
+      "description": "Uppercase meta text link used beside stamps (GitHub, LinkedIn).",
+      "html": "<a class=\"ds-meta-link\" href=\"#\">GitHub</a>",
+      "css": ".ds-meta-link { font-family: \"Geist Sans\", system-ui, sans-serif; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: #4a463f; text-underline-offset: 0.18em; } .ds-meta-link:hover { color: #161616; } .ds-meta-link:focus-visible { outline: 2px solid #ff5a1f; outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Quiet Index Folio",
+    "overview": "The site is one index folio on a soft dark stage. Charcoal wraps a single warm paper sheet; identity is the cover, work is indexed plates. There is no centered hero stack of equal cards — hairline rules and course bands carry hierarchy instead.\n\nDensity stays calm and editorial. Motion shares one clock so hover, crossfade, and settle feel like the same instrument. Orange exists only to mark the active index course; it never paints the stage.",
+    "keyCharacteristics": [
+      "Charcoal stage with one centered warm sheet",
+      "Bricolage Grotesque display / Geist body pairing",
+      "Numbered index rows that drive a dark face-out plate at the fold",
+      "Floating charcoal pill nav fixed to the stage",
+      "Stamp CTAs with a slight hover rotation; no card shells"
+    ],
+    "rules": [
+      {
+        "name": "The Active-Mark Rule",
+        "body": "Orange appears only on the active index number, its course bar, focus outline, and the matching face-out number — never as a page wash, hero fill, or decorative accent cluster.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two-Field Rule",
+        "body": "Content lives on the warm sheet; the charcoal stage is atmosphere and frame, not a second content surface.",
+        "section": "colors"
+      },
+      {
+        "name": "The Cover-First Rule",
+        "body": "On Home, the name in display type is the dominant signal; role and supporting line stay subordinate in soft ink.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Card-Shell Rule",
+        "body": "Do not wrap content in bordered, radius’d, shadow’d cards. Structure with hairline rules, course bands, and the single sheet.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep orange on active index signals and focus only.",
+      "Do structure lists with hairline rules and numbered courses on one sheet.",
+      "Do share the 420ms / cubic-bezier(0.22, 1, 0.36, 1) clock; honor prefers-reduced-motion.",
+      "Do put primary actions in stamp outlines, not filled brand buttons."
+    ],
+    "donts": [
+      "Don't introduce equal card grids or competing surface shells on the sheet.",
+      "Don't wash the stage or sheet with mark orange.",
+      "Don't center a marketing hero stack above a card grid — identity stays cover-scale on the sheet.",
+      "Don't invent employers, metrics, or testimonials as real; keep provisional copy labeled."
+    ]
+  }
+}

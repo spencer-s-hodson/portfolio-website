@@ -1,0 +1,191 @@
+{
+  "title": "Choose the visual world",
+  "question": "The roll assigned Drafting Plate. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Drafting Plate",
+      "kicker": "THE ROLL",
+      "lineage": "mechanical title-block drafting plates",
+      "thesis": "The portfolio reads as one engineering drawing: identity is the title block, work is the plate detail.",
+      "palette": ["#0a1628", "#d6e6f5", "#3d9bdb", "#f2f5f8"],
+      "materials": ["cyanotype ink", "vellum sheet", "steel straightedge"],
+      "viewport": "A full-bleed sheet whose title block holds Spencer Hodson, AI Native Software Engineer, one line of notes, stamped nav, and an approve-stamp contact action.",
+      "risk": "Reads as engineer cosplay if the plate grammar stays decorative instead of structural.",
+      "raised": [
+        {
+          "from": "challenger-ikeda",
+          "raise": "Binary Plate Commitment — ink and sheet only; no grey mush, one drafting cyan for active marks."
+        },
+        {
+          "from": "challenger-cutting-bench",
+          "raise": "State-as-Mark — featured work and current role use tape-flag / revision marks, never soft colored badges."
+        },
+        {
+          "from": "challenger-skate",
+          "raise": "Lockup Scale Survival — Spencer Hodson must still read when stamped down to the nav cell."
+        },
+        {
+          "from": "challenger-deep-dive",
+          "raise": "Depth-as-Scroll — title block owns the first viewport; experience and projects deepen as plate details below."
+        }
+      ],
+      "wireframe": {
+        "cols": 12,
+        "rows": 10,
+        "regions": [
+          { "label": "title block · name", "x": 0, "y": 0, "w": 8, "h": 3, "accent": true },
+          { "label": "drawing no / nav", "x": 8, "y": 0, "w": 4, "h": 1 },
+          { "label": "role + notes", "x": 0, "y": 3, "w": 8, "h": 2 },
+          { "label": "approve stamp", "x": 8, "y": 1, "w": 4, "h": 4, "accent": true },
+          { "label": "plate detail · featured work", "x": 0, "y": 5, "w": 12, "h": 5 }
+        ]
+      },
+      "comp": ".impeccable/mocks/decision/assigned.webp"
+    },
+    {
+      "id": "model-pick",
+      "label": "Agent Session Log",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "AI agent turn transcripts",
+      "thesis": "Hiring proof is a designed session log: identity as the run header, projects as turns.",
+      "palette": ["#111111", "#f7f7f5", "#2f6fed", "#c8c8c4"],
+      "materials": ["monospace ink", "terminal paper", "turn gutters"],
+      "viewport": "A session header with Spencer Hodson / AI Native Software Engineer, then turn cards that open into Work and Projects.",
+      "risk": "Also the direction most AI-engineer portfolios land on when they try to look native.",
+      "wireframe": {
+        "cols": 12,
+        "rows": 10,
+        "regions": [
+          { "label": "session header", "x": 0, "y": 0, "w": 12, "h": 2, "accent": true },
+          { "label": "turn · identity", "x": 1, "y": 2, "w": 10, "h": 2 },
+          { "label": "turn · featured project", "x": 1, "y": 4, "w": 10, "h": 3, "accent": true },
+          { "label": "turn · contact", "x": 1, "y": 7, "w": 10, "h": 2 }
+        ]
+      },
+      "comp": ".impeccable/mocks/decision/model-pick.webp"
+    },
+    {
+      "id": "challenger-star-atlas",
+      "label": "Star Atlas",
+      "verdict": "competitive",
+      "lineage": "celestial star atlas charts",
+      "thesis": "Career objects plotted by magnitude on a night chart; projects are stars, experience is constellation lines.",
+      "palette": ["#0b1220", "#e8eef8", "#c45c1a", "#7a8aa0"],
+      "materials": ["navy chart paper", "chalk stars", "red-flashlight ink"],
+      "viewport": "Deep navy plate with Spencer Hodson as the labeled object under a red ring, projects as magnitude-scaled dots.",
+      "case": "Holds audience identification with diagram culture; loses product clarity for a three-page hiring scan.",
+      "risk": "Hiring managers may enjoy the chart and still not know what to do.",
+      "wireframe": {
+        "cols": 12,
+        "rows": 10,
+        "regions": [
+          { "label": "chart field", "x": 0, "y": 0, "w": 9, "h": 10, "accent": true },
+          { "label": "index / nav", "x": 9, "y": 0, "w": 3, "h": 10 },
+          { "label": "object under eye", "x": 3, "y": 3, "w": 3, "h": 3, "accent": true }
+        ]
+      },
+      "comp": ".impeccable/mocks/decision/challenger-star-atlas.webp",
+      "hero": "https://impeccable.style/worlds/cards/notation-diagram-systems-star-atlas-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/notation-diagram-systems-star-atlas.webp"
+    },
+    {
+      "id": "challenger-ikeda",
+      "label": "Data Sublime",
+      "verdict": "declined",
+      "lineage": "Ryoji Ikeda datamatics fields",
+      "thesis": "Identity and work dissolve into a pure black-and-white barcode lattice.",
+      "palette": ["#000000", "#ffffff"],
+      "materials": ["pixel bars", "monospace numerics"],
+      "viewport": "A full-bleed barcode field with name recoverable only by sampling a column.",
+      "case": "Loses both axes: recruiters do not identify with strobing data art, and the offer disappears.",
+      "kept": "Absolute binary contrast and tabular density courage.",
+      "risk": "Beautiful and unusable for a hiring decision.",
+      "hero": "https://impeccable.style/worlds/cards/ikeda-datamatics-hero.webp"
+    },
+    {
+      "id": "challenger-cutting-bench",
+      "label": "Cutting Bench",
+      "verdict": "declined",
+      "lineage": "film cutting-bench select rails",
+      "thesis": "Career frames string on a perforated rail; the stop is a folded tape flag.",
+      "palette": ["#000000", "#e85d04", "#ffffff"],
+      "materials": ["film grain", "perforation", "tape flags"],
+      "viewport": "An orange grain strip of punched frames for Home, Experience, and Projects.",
+      "case": "Loses audience identification: editors, not engineers.",
+      "kept": "State-as-mark discipline and rank by cell count.",
+      "risk": "Costume of another craft.",
+      "hero": "https://impeccable.style/worlds/cards/operate-a-cutting-bench-select-rail-hero.webp"
+    },
+    {
+      "id": "challenger-moon-shadow",
+      "label": "Moon-Shadow Bazaar",
+      "verdict": "declined",
+      "lineage": "surreal moonlit shadow markets",
+      "thesis": "Projects trade as shadows tagged with origin tickets.",
+      "palette": ["#0c1424", "#c4a35a", "#e8e4d9"],
+      "materials": ["moonlit canvas", "soft black shadows"],
+      "viewport": "A lane of stalls where each project is a tagged shadow for sale.",
+      "case": "Loses both axes: surreal commerce cannot carry hiring proof.",
+      "kept": "Every work item keeps an origin ticket.",
+      "risk": "Fantasy where a decision is needed.",
+      "hero": "https://impeccable.style/worlds/cards/dream-surreal-impossible-worlds-moon-shadow-bazaar-hero.webp"
+    },
+    {
+      "id": "challenger-deep-dive",
+      "label": "Mesophotic Dive",
+      "verdict": "declined",
+      "lineage": "technical deep-dive profiles",
+      "thesis": "Scroll is a descent; contact is the ascent plan.",
+      "palette": ["#021826", "#4ec3d9", "#e8f4f8"],
+      "materials": ["abyssal ink", "marine snow"],
+      "viewport": "A vertical depth axis with name at the surface and work in the dark.",
+      "case": "Loses both axes: ocean drama is not this product's world.",
+      "kept": "Progressive deepening by scroll depth.",
+      "risk": "Spectacle without hiring clarity.",
+      "hero": "https://impeccable.style/worlds/cards/rivers-tides-ocean-depths-mesophotic-deep-dive-hero.webp"
+    },
+    {
+      "id": "challenger-skate",
+      "label": "Deck Wall",
+      "verdict": "declined",
+      "lineage": "skate-shop deck walls",
+      "thesis": "Projects hang as full-bleed decks you pull and flip.",
+      "palette": ["#00e5c0", "#ff2d95", "#111111", "#f5f0e6"],
+      "materials": ["silkscreen ink", "grip tape", "maple"],
+      "viewport": "A screaming rack of project decks under shop light.",
+      "case": "Loses product clarity for full-time hiring trust.",
+      "kept": "Brand lockups that survive scale-down.",
+      "risk": "Shop energy where a resume is being read.",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-skate-deck-wall-hero.webp"
+    }
+  ],
+  "reroll": {
+    "registers": ["safer", "bolder"]
+  },
+  "buildPath": {
+    "value": "code",
+    "toggle": true
+  },
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "A polished dark developer portfolio: name, role, project cards, contact.",
+    "palette": ["#0a0a0a", "#fafafa", "#3b82f6"],
+    "materials": ["clean grid", "soft cards", "system sans"],
+    "viewport": "Centered identity hero over a three-up project grid and a contact strip.",
+    "risk": "Indistinguishable from every other engineer site by design.",
+    "wireframe": {
+      "cols": 12,
+      "rows": 10,
+      "regions": [
+        { "label": "nav", "x": 0, "y": 0, "w": 12, "h": 1 },
+        { "label": "name + role", "x": 2, "y": 2, "w": 8, "h": 2, "accent": true },
+        { "label": "project cards", "x": 1, "y": 5, "w": 10, "h": 3 },
+        { "label": "contact", "x": 3, "y": 8, "w": 6, "h": 1, "accent": true }
+      ]
+    },
+    "comp": ".impeccable/mocks/decision/canon.webp"
+  },
+  "steer": true
+}

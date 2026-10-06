@@ -1,0 +1,185 @@
+{
+  "title": "Choose the visual world",
+  "question": "Fresh hand. You steered toward Sawad (soft dark stage, light content sheet, calm identity-first portfolio). Soft Stage Card and Play it straight sit closest; the roll still leads.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Quiet Index Folio",
+      "kicker": "THE ROLL",
+      "lineage": "architect’s index folio with soft dark wrapping",
+      "thesis": "A numbered index of work inside one soft dark stage: identity is the folio cover, then Experience and Projects as indexed plates.",
+      "palette": ["#121212", "#f4f2ee", "#ff5a1f", "#2a2a2a"],
+      "materials": ["soft charcoal stage", "warm paper sheet", "hairline index rules"],
+      "viewport": "Dark stage; one warm paper sheet; Spencer Hodson and AI Native Software Engineer as cover lines; numbered index rows for Featured, Experience, Projects; orange mark on the active row.",
+      "risk": "Can read austere if the index never opens into rich project proof.",
+      "raised": [
+        {
+          "from": "challenger-vhs",
+          "raise": "Face-Out Feature — one project pulls face-out from the index as a large plate, not a quiet row forever."
+        },
+        {
+          "from": "challenger-op-art",
+          "raise": "Seamless Stage — one continuous sheet field; no stack of competing card shells."
+        },
+        {
+          "from": "challenger-clay",
+          "raise": "Course Banding — experience reads as horizontal courses with date seams, not floating chips."
+        }
+      ],
+      "wireframe": {
+        "cols": 12,
+        "rows": 10,
+        "regions": [
+          { "label": "pill nav", "x": 4, "y": 0, "w": 4, "h": 1 },
+          { "label": "name + role cover", "x": 1, "y": 2, "w": 10, "h": 2, "accent": true },
+          { "label": "index rows", "x": 1, "y": 5, "w": 10, "h": 3 },
+          { "label": "face-out project", "x": 1, "y": 8, "w": 10, "h": 2, "accent": true }
+        ]
+      },
+      "comp": ".impeccable/mocks/decision/assigned.webp"
+    },
+    {
+      "id": "model-pick",
+      "label": "Soft Stage Card",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "soft-dark personal product portfolios (Sawad-class)",
+      "thesis": "Dark outer stage, one light rounded content sheet, floating pill nav, identity first, then projects and experience in calm stacks.",
+      "palette": ["#0e0e0e", "#ffffff", "#ff5a1f", "#1a1a1a"],
+      "materials": ["charcoal stage", "rounded white sheet", "soft portrait well", "orange accent arc"],
+      "viewport": "Floating pill nav over a dark stage; white sheet with portrait, Spencer Hodson, AI Native Software Engineer, short line, then recent projects and experience beginning below.",
+      "risk": "This is the familiar engineer-portfolio path you named — effective, and easy to look like every Framer template.",
+      "wireframe": {
+        "cols": 12,
+        "rows": 10,
+        "regions": [
+          { "label": "pill nav", "x": 4, "y": 0, "w": 4, "h": 1 },
+          { "label": "portrait", "x": 4, "y": 2, "w": 4, "h": 3, "accent": true },
+          { "label": "name + role", "x": 2, "y": 5, "w": 8, "h": 2, "accent": true },
+          { "label": "projects start", "x": 1, "y": 8, "w": 10, "h": 2 }
+        ]
+      },
+      "comp": ".impeccable/mocks/decision/model-pick.webp"
+    },
+    {
+      "id": "challenger-collider",
+      "label": "Event Display",
+      "verdict": "competitive",
+      "lineage": "particle detector event displays",
+      "thesis": "Career as one collision event: tracks are projects, rings are experience layers, the center is Spencer.",
+      "palette": ["#05070c", "#d7e6ff", "#f5d547", "#e23d28"],
+      "materials": ["vacuum black", "steel-blue rings", "signal tracks"],
+      "viewport": "Concentric detector rings with Spencer Hodson at the beamline and project tracks arcing outward.",
+      "case": "Holds engineer audience identification; loses product clarity for a three-page hiring scan.",
+      "risk": "Science spectacle can outrun the resume.",
+      "wireframe": {
+        "cols": 12,
+        "rows": 10,
+        "regions": [
+          { "label": "ring field", "x": 0, "y": 0, "w": 9, "h": 10, "accent": true },
+          { "label": "track legend / nav", "x": 9, "y": 0, "w": 3, "h": 10 },
+          { "label": "beamline identity", "x": 3, "y": 4, "w": 3, "h": 2, "accent": true }
+        ]
+      },
+      "comp": ".impeccable/mocks/decision/challenger-star-atlas.webp",
+      "hero": "https://impeccable.style/worlds/cards/scientific-notation-particle-detector-event-display-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/scientific-notation-particle-detector-event-display.webp"
+    },
+    {
+      "id": "challenger-vhs",
+      "label": "VHS Wall",
+      "verdict": "declined",
+      "lineage": "friday-night video store walls",
+      "thesis": "Projects as clamshell spines you pull face-out.",
+      "palette": ["#0a0a0a", "#ff2d2d", "#3d7cff", "#f5d000"],
+      "materials": ["black clamshells", "lurid cover inks", "rented-out tags"],
+      "viewport": "A fluorescent aisle of project spines with Home / Experience / Projects as genre headers.",
+      "case": "Loses both axes for hiring trust.",
+      "kept": "Face-out pull for the featured project.",
+      "risk": "Costume of a video store.",
+      "hero": "https://impeccable.style/worlds/cards/vernacular-ephemera-vhs-rental-wall-hero.webp"
+    },
+    {
+      "id": "challenger-op-art",
+      "label": "Op Textile",
+      "verdict": "declined",
+      "lineage": "op-art textile repeats",
+      "thesis": "The page is one continuous black-white wave with no seam.",
+      "palette": ["#000000", "#ffffff"],
+      "materials": ["matte cloth", "hard geometric wave"],
+      "viewport": "A seamless optical field with name recoverable only as a quiet interruption.",
+      "case": "Loses clarity: optical flex fights a hiring scan.",
+      "kept": "One continuous field without competing card shells.",
+      "risk": "Dazzle over decision.",
+      "hero": "https://impeccable.style/worlds/cards/design-canon-op-art-textile-repeat-hero.webp"
+    },
+    {
+      "id": "challenger-algorave",
+      "label": "Algorave Floor",
+      "verdict": "declined",
+      "lineage": "live-coded algorave stages",
+      "thesis": "The portfolio is a live code buffer whose edits are the work.",
+      "palette": ["#050505", "#39ff14", "#ff00aa", "#ffbf00"],
+      "materials": ["projector black", "phosphor syntax"],
+      "viewport": "Stage-scale monospace with Spencer Hodson as the cursor line.",
+      "case": "Loses audience identification for recruiters.",
+      "kept": "One shared motion clock.",
+      "risk": "Club energy on a hiring page.",
+      "hero": "https://impeccable.style/worlds/cards/medium-native-algorave-source-floor-hero.webp"
+    },
+    {
+      "id": "challenger-accretion",
+      "label": "Accretion Disk",
+      "verdict": "declined",
+      "lineage": "black-hole accretion thresholds",
+      "thesis": "Career matter orbits then crosses into committed work.",
+      "palette": ["#000000", "#f2f6ff", "#e8a23a", "#c45c1a"],
+      "materials": ["void black", "photon-ring gold"],
+      "viewport": "Warped rings with identity at the horizon and projects as orbiting fragments.",
+      "case": "Loses both axes: cosmology is not this product.",
+      "kept": "Irreversible threshold as a contact commit.",
+      "risk": "Spectacle without a resume.",
+      "hero": "https://impeccable.style/worlds/cards/galaxies-nebulae-deep-time-accretion-disk-threshold-hero.webp"
+    },
+    {
+      "id": "challenger-clay",
+      "label": "Coil Tower",
+      "verdict": "declined",
+      "lineage": "coiled earthen towers",
+      "thesis": "Experience rises as visible clay courses.",
+      "palette": ["#6b3a22", "#e8d3b8", "#2a1810"],
+      "materials": ["terracotta coils", "slip-white seams"],
+      "viewport": "A vertical coil of career courses with the live ring marked damp.",
+      "case": "Loses both axes for software hiring.",
+      "kept": "Horizontal course banding for experience.",
+      "risk": "Craft metaphor without product proof.",
+      "hero": "https://impeccable.style/worlds/cards/clay-ceramics-fracture-coiled-earth-tower-hero.webp"
+    }
+  ],
+  "reroll": {
+    "registers": ["safer", "bolder"]
+  },
+  "buildPath": {
+    "value": "code",
+    "toggle": true
+  },
+  "canon": true,
+  "canonCard": {
+    "label": "Play it like Sawad",
+    "thesis": "The soft-dark personal portfolio category standard, executed at Sawad’s craft level: stage, sheet, pill nav, identity, projects, experience.",
+    "palette": ["#0e0e0e", "#ffffff", "#ff5a1f"],
+    "materials": ["rounded sheet", "soft cards", "pill nav", "portrait well"],
+    "viewport": "Dark stage, floating pill nav, light content sheet with portrait and Spencer Hodson / AI Native Software Engineer, then project and experience stacks.",
+    "risk": "Indistinguishable from the template you liked unless the content and motion are yours.",
+    "wireframe": {
+      "cols": 12,
+      "rows": 10,
+      "regions": [
+        { "label": "pill nav", "x": 4, "y": 0, "w": 4, "h": 1 },
+        { "label": "portrait + name", "x": 3, "y": 2, "w": 6, "h": 4, "accent": true },
+        { "label": "project cards", "x": 1, "y": 7, "w": 10, "h": 3 }
+      ]
+    },
+    "comp": ".impeccable/mocks/decision/canon.webp"
+  },
+  "steer": true
+}

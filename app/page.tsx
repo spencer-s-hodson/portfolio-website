@@ -1,69 +1,127 @@
-import Image from "next/image";
+import Link from "next/link";
+import {
+  ArrowRightIcon,
+  BriefcaseIcon,
+  FolderIcon,
+} from "@/components/icons";
+import {
+  ExperienceList,
+  PostList,
+  ProjectList,
+  Section,
+  ToolGrid,
+  TwoTone,
+} from "@/components/sections";
+import { experience, posts, projects, site, tools } from "@/lib/content";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main>
+      <header className="hero">
+        <TwoTone
+          as="h1"
+          size="hero"
+          bright={site.heroLines[0]}
+          dim={site.heroLines[1]}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+        <p className="lede mt-7">{site.supportingLine}</p>
+
+        <dl className="counts">
+          {site.stats.map(({ value, label }) => (
+            <div key={label.join(" ")}>
+              <dt className="count-label">
+                {label[0]}
+                <br />
+                {label[1]}
+              </dt>
+              <dd className="count-value display">
+                {String(value).padStart(2, "0")}
+              </dd>
+            </div>
+          ))}
+        </dl>
+
+        <div className="feature-cards">
+          <Link href="/projects" className="feature-card feature-mark">
+            <svg
+              className="feature-art"
+              viewBox="0 0 320 260"
+              preserveAspectRatio="none"
+              aria-hidden="true"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              <path d="M210 -10c-40 60 40 90 10 150s-140 40-170 130" />
+              <path d="M330 40c-60 10-50 80-110 100" />
+            </svg>
+            <FolderIcon className="feature-icon" />
+            <span className="feature-title display">Projects</span>
+            <span className="feature-go" aria-hidden="true">
+              <ArrowRightIcon className="h-4 w-4" />
+            </span>
+          </Link>
+          <Link href="/experience" className="feature-card feature-lime">
+            <svg
+              className="feature-art"
+              viewBox="0 0 320 260"
+              preserveAspectRatio="none"
+              aria-hidden="true"
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              <path d="M-10 230 50 40l40 150 60-170 50 190 50-150 40 120 50-160" />
+            </svg>
+            <BriefcaseIcon className="feature-icon" />
+            <span className="feature-title display">Experience</span>
+            <span className="feature-go" aria-hidden="true">
+              <ArrowRightIcon className="h-4 w-4" />
+            </span>
+          </Link>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </header>
+
+      <Section
+        id="projects"
+        bright="Recent"
+        dim="Projects"
+        more={{ href: "/projects", label: "All projects" }}
+      >
+        <ProjectList items={projects.slice(0, 3)} />
+      </Section>
+
+      <Section
+        id="experience"
+        bright="Work"
+        dim="Experience"
+        more={{ href: "/experience", label: "Full experience" }}
+      >
+        <ExperienceList items={experience.slice(0, 2)} />
+      </Section>
+
+      <Section
+        id="tech"
+        bright="Tech"
+        dim="Stack"
+        more={{ href: "/tech", label: "Whole stack" }}
+      >
+        <ToolGrid items={tools.slice(0, 6)} />
+      </Section>
+
+      <Section
+        id="blog"
+        bright="Notes"
+        dim="& Writing"
+        more={{ href: "/blog", label: "All posts" }}
+      >
+        <PostList items={posts.slice(0, 2)} />
+      </Section>
+
+      <section className="home-section contact" aria-labelledby="contact-title">
+        <TwoTone id="contact-title" bright="Let's work" dim="together" />
+        <p className="lede mt-6">
+          Hiring for a full-time role, or need a contract engineer? The inbox
+          is open.
+        </p>
+        <a href={`mailto:${site.email}`} className="stamp mt-8">
+          {site.email}
+        </a>
+      </section>
+    </main>
   );
 }
