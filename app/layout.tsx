@@ -1,25 +1,16 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { ContactCTA } from "@/components/contact-cta";
 import { PillNav } from "@/components/pill-nav";
 import { ProfileCard } from "@/components/profile-card";
+import { ShellCard } from "@/components/shell-card";
 import { site } from "@/lib/content";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -34,7 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${bricolage.variable} h-full antialiased`}
+      className={`${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full">
         <a href="#content" className="skip-link">
@@ -42,12 +33,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </a>
         <PillNav />
         <div className="shell">
-          <aside className="shell-card">
-            <ProfileCard />
-          </aside>
+          <ShellCard placement="start">
+            <ProfileCard priority />
+          </ShellCard>
           <div className="shell-main" id="content">
             {children}
             <ContactCTA />
+            <ShellCard placement="end">
+              <ProfileCard />
+            </ShellCard>
             <footer className="site-footer">
               © {new Date().getFullYear()} {site.name}
             </footer>

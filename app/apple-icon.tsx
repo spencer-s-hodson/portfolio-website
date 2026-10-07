@@ -13,7 +13,7 @@ export const contentType = "image/png";
 
 export default async function AppleIcon() {
   const fontData = await readFile(
-    join(process.cwd(), "app/assets/BricolageGrotesque-ExtraBold.ttf"),
+    join(process.cwd(), "app/assets/Poppins-Bold.ttf"),
   );
 
   return new ImageResponse(
@@ -27,9 +27,9 @@ export default async function AppleIcon() {
           justifyContent: "center",
           background: "#ff5a1f",
           color: "#ffffff",
-          fontFamily: "Bricolage",
+          fontFamily: "Poppins",
           fontSize: 118,
-          fontWeight: 800,
+          fontWeight: 700,
           letterSpacing: "-0.04em",
           lineHeight: 1,
         }}
@@ -41,9 +41,9 @@ export default async function AppleIcon() {
       ...size,
       fonts: [
         {
-          name: "Bricolage",
+          name: "Poppins",
           data: fontData,
-          weight: 800,
+          weight: 700,
           style: "normal",
         },
       ],

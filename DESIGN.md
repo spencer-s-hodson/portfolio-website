@@ -13,8 +13,8 @@ colors:
   mark-deep: "#e2470f"
   lime: "#c8f04a"
 typography:
-  display: "Bricolage Grotesque 700–800, uppercase for two-tone headlines, tracking -0.03em"
-  body: "Geist Sans 400–600"
+  display: "Poppins 700–800, uppercase for two-tone headlines, tracking -0.03em"
+  body: "Poppins 400–700"
 ---
 
 # Design System: Pinned Card Stage

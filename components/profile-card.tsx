@@ -15,7 +15,7 @@ const initials = site.name
   .map((part) => part[0])
   .join("");
 
-export function ProfileCard() {
+export function ProfileCard({ priority = false }: { priority?: boolean }) {
   return (
     <article className="profile-card" aria-label={`${site.name}, profile`}>
       <div className="profile-portrait">
@@ -26,7 +26,7 @@ export function ProfileCard() {
             fill
             sizes="(min-width: 1024px) 300px, 80vw"
             className="object-cover"
-            priority
+            priority={priority}
           />
         ) : (
           <span className="profile-monogram" aria-hidden="true">
