@@ -100,7 +100,7 @@ export function ContactCTA() {
         dim="together"
       />
       <p className="lede contact-lede">
-        Hiring for a full-time role, or need a contract engineer? Send a note
+        Hiring for a full-time role, or need help with a project? Send a note
         and I&apos;ll get back to you.
       </p>
 
@@ -156,16 +156,30 @@ export function ContactCTA() {
 
           <div className="contact-form-row">
             <label className="contact-field">
-              <span className="contact-label">Name</span>
+              <span className="contact-label">First name</span>
               <input
                 type="text"
-                name="name"
-                autoComplete="name"
-                placeholder="Your name"
+                name="first-name"
+                autoComplete="given-name"
+                placeholder="First name"
                 required
                 disabled={status === "submitting"}
               />
             </label>
+            <label className="contact-field">
+              <span className="contact-label">Last name</span>
+              <input
+                type="text"
+                name="last-name"
+                autoComplete="family-name"
+                placeholder="Last name"
+                required
+                disabled={status === "submitting"}
+              />
+            </label>
+          </div>
+
+          <div className="contact-form-row">
             <label className="contact-field">
               <span className="contact-label">Email</span>
               <input
@@ -177,9 +191,6 @@ export function ContactCTA() {
                 disabled={status === "submitting"}
               />
             </label>
-          </div>
-
-          <div className="contact-form-row">
             <label className="contact-field">
               <span className="contact-label">
                 Phone <span className="contact-optional">optional</span>
@@ -192,26 +203,27 @@ export function ContactCTA() {
                 disabled={status === "submitting"}
               />
             </label>
-            <label className="contact-field">
-              <span className="contact-label">Topic</span>
-              <select
-                name="topic"
-                defaultValue=""
-                required
-                disabled={status === "submitting"}
-              >
-                {topicOptions.map((option) => (
-                  <option
-                    key={option.value || "empty"}
-                    value={option.value}
-                    disabled={option.value === ""}
-                  >
-                    {option.label}
-                  </option>
-                ))}
-              </select>
-            </label>
           </div>
+
+          <label className="contact-field">
+            <span className="contact-label">Topic</span>
+            <select
+              name="topic"
+              defaultValue=""
+              required
+              disabled={status === "submitting"}
+            >
+              {topicOptions.map((option) => (
+                <option
+                  key={option.value || "empty"}
+                  value={option.value}
+                  disabled={option.value === ""}
+                >
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </label>
 
           <label className="contact-field">
             <span className="contact-label">Message</span>

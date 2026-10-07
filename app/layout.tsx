@@ -42,11 +42,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <ShellCard placement="end">
               <ProfileCard />
             </ShellCard>
-            <footer className="site-footer">
-              © {new Date().getFullYear()} {site.name}
-            </footer>
           </div>
         </div>
+        <footer className="site-footer">
+          Made with{" "}
+          <span className="site-footer-heart" aria-hidden="true">
+            ❤️
+          </span>{" "}
+          by <span className="site-footer-name">{site.name}</span>
+        </footer>
       </body>
     </html>
   );
