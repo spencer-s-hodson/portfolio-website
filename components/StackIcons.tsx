@@ -27,8 +27,8 @@ export function StackIcons({ items }: { items: string[] }) {
                 <img
                   src={icon}
                   alt=""
-                  width={20}
-                  height={20}
+                  width={28}
+                  height={28}
                   className="stack-icon-img"
                 />
               ) : (

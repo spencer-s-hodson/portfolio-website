@@ -2,7 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import {
+  externalLinkProps,
   formatDate,
+  techIconSrc,
+  type Education,
   type Experience,
   type Post,
   type Project,
@@ -86,12 +89,26 @@ export function ProjectList({ items }: { items: Project[] }) {
     <ul className="row-list">
       {items.map((project, i) => (
         <li key={project.id}>
-          <a href={project.href ?? "#"} className="row row-project">
+          <a
+            href={project.href ?? "#"}
+            className="row row-project"
+            {...externalLinkProps(project.href ?? "#")}
+          >
             <span
-              className={`project-tile ${tileTones[i % tileTones.length]}`}
+              className={`project-tile ${project.logo ? "project-tile-logo" : tileTones[i % tileTones.length]}`}
               aria-hidden="true"
             >
-              <span className="display">{project.title[0]}</span>
+              {project.logo ? (
+                <Image
+                  src={project.logo}
+                  alt=""
+                  width={160}
+                  height={120}
+                  className="project-tile-img"
+                />
+              ) : (
+                <span className="display">{project.title[0]}</span>
+              )}
             </span>
             <span className="row-body">
               <span className="row-title display">{project.title}</span>
@@ -103,6 +120,44 @@ export function ProjectList({ items }: { items: Project[] }) {
             </span>
             <ArrowUpRightIcon className="row-arrow" />
           </a>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export function EducationList({ items }: { items: Education[] }) {
+  return (
+    <ul className="row-list">
+      {items.map((entry) => (
+        <li key={entry.id}>
+          <div className="row row-experience row-static">
+            <span className="company-logo" aria-hidden="true">
+              {entry.logo ? (
+                <Image
+                  src={entry.logo}
+                  alt=""
+                  width={72}
+                  height={72}
+                  className="company-logo-img"
+                />
+              ) : (
+                <span className="display">{entry.school[0]}</span>
+              )}
+            </span>
+            <span className="row-body">
+              <span className="row-title display">{entry.school}</span>
+              <span className="row-sub">{entry.degree}</span>
+              {entry.summary ? (
+                <span className="row-text">{entry.summary}</span>
+              ) : null}
+            </span>
+            {entry.period ? (
+              <span className="row-side">
+                <span className="row-period">{entry.period}</span>
+              </span>
+            ) : null}
+          </div>
         </li>
       ))}
     </ul>
@@ -122,7 +177,7 @@ export function ExperienceList({ items }: { items: Experience[] }) {
                   alt=""
                   width={72}
                   height={72}
-                  className="company-logo-img"
+                  className={`company-logo-img${role.logoInvert ? " company-logo-img-invert" : ""}`}
                 />
               ) : (
                 <span className="display">{role.company[0]}</span>
@@ -156,7 +211,7 @@ export function ExperienceDetail({ role }: { role: Experience }) {
               alt=""
               width={96}
               height={96}
-              className="company-logo-img"
+              className={`company-logo-img${role.logoInvert ? " company-logo-img-invert" : ""}`}
             />
           ) : (
             <span className="display">{role.company[0]}</span>
@@ -193,23 +248,52 @@ export function ExperienceDetail({ role }: { role: Experience }) {
 
 export function ToolGrid({ items }: { items: Tool[] }) {
   return (
-    <ul className="tool-grid">
-      {items.map((tool) => (
-        <li key={tool.id} className="tool">
-          <span className="tool-mark display" aria-hidden="true">
-            {tool.name.slice(0, 2)}
-          </span>
-          <span>
-            <span className="tool-name">{tool.name}</span>
-            <span className="tool-use">{tool.use}</span>
-          </span>
-        </li>
-      ))}
+    <ul className="tool-icons" aria-label="Technologies">
+      {items.map((tool) => {
+        const icon = techIconSrc(tool.name);
+        const letters = tool.name
+          .split(/[\s.]+/)
+          .map((part) => part[0])
+          .join("")
+          .slice(0, 2)
+          .toUpperCase();
+
+        return (
+          <li key={tool.id} className="tool-icon">
+            <span className="tool-icon-face">
+              {icon ? (
+                // eslint-disable-next-line @next/next/no-img-element -- colored brand assets from /public
+                <img
+                  src={icon}
+                  alt=""
+                  width={36}
+                  height={36}
+                  className="tool-icon-img"
+                />
+              ) : (
+                <span className="tool-icon-fallback display">{letters}</span>
+              )}
+              <span className="stack-tip" aria-hidden="true">
+                {tool.name}
+              </span>
+            </span>
+            <span className="sr-only">{tool.name}</span>
+          </li>
+        );
+      })}
     </ul>
   );
 }
 
 export function PostList({ items }: { items: Post[] }) {
+  if (items.length === 0) {
+    return (
+      <div className="tbc-box" role="status">
+        <p className="tbc-box-label display">To be continued</p>
+      </div>
+    );
+  }
+
   return (
     <ul className="row-list">
       {items.map((post) => {
@@ -229,7 +313,11 @@ export function PostList({ items }: { items: Post[] }) {
         return (
           <li key={post.id}>
             {post.href ? (
-              <a href={post.href} className="row row-post">
+              <a
+                href={post.href}
+                className="row row-post"
+                {...externalLinkProps(post.href)}
+              >
                 {body}
               </a>
             ) : (

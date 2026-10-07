@@ -3,11 +3,18 @@ import { PageHeader, ToolGrid } from "@/components/sections";
 import { site, tools, type Tool } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Tech",
-  description: `The tools ${site.name} builds with`,
+  title: "Stack",
+  description: `Tech stack ${site.name} builds with`,
 };
 
-const groups: Tool["group"][] = ["Languages", "Frameworks", "AI", "Infrastructure"];
+const groups: Tool["group"][] = [
+  "Languages",
+  "Frontend",
+  "Backend",
+  "AI",
+  "Platform",
+  "Integrations",
+];
 
 export default function TechPage() {
   return (
@@ -15,8 +22,7 @@ export default function TechPage() {
       <PageHeader
         bright="Tech"
         dim="Stack"
-        lede="The languages, frameworks, and AI tooling I reach for when shipping."
-        note="Placeholder stack · replace in lib/content.ts"
+        lede="Languages, frameworks, and infrastructure I use to ship AI-native products and client work."
       />
       <div className="page-body">
         {groups.map((group) => {

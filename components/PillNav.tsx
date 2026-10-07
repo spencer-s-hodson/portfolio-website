@@ -14,7 +14,7 @@ export const navLinks = [
   { href: "/", label: "Home", Icon: HomeIcon },
   { href: "/projects", label: "Projects", Icon: FolderIcon },
   { href: "/experience", label: "Experience", Icon: BriefcaseIcon },
-  { href: "/tech", label: "Tech", Icon: WrenchIcon },
+  { href: "/tech", label: "Tech Stack", Icon: WrenchIcon },
   { href: "/blog", label: "Blog", Icon: PenIcon },
 ] as const;
 

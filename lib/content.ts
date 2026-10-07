@@ -33,6 +33,10 @@ export const site = {
  * Universal tech icon map — used by projects and experience.
  * Drop PNGs in /public/tech (e.g. typescript.png), then map the label to the filename stem.
  */
+/**
+ * Map display name → filename stem in /public/tech.
+ * Only list icons that exist on disk (missing entries use letter fallbacks).
+ */
 export const techIcons: Record<string, string> = {
   TypeScript: "typescript",
   OpenShift: "openshift",
@@ -43,11 +47,41 @@ export const techIcons: Record<string, string> = {
   Tailwind: "tailwind",
   AWS: "aws",
   Ansible: "ansible",
+  Postgres: "postgres",
+  Supabase: "supabase",
+  Stripe: "stripe",
+  Resend: "resend",
+  "Vue.js": "vue",
+  Laravel: "laravel",
+  Twilio: "twilio",
+  Java: "java",
+  PHP: "php",
+  MCP: "mcp",
+  Cursor: "cursor",
+  "OpenAI Agents SDK": "openai",
+  "Vercel AI SDK": "vercel",
+  Vercel: "vercel",
+  "Claude Code": "claude",
+  "Spring Boot": "spring-boot",
+  "shadcn/ui": "shadcn",
+  "Better Auth": "better-auth",
+  tRPC: "trpc",
+  "Node.js": "nodejs",
+  JavaScript: "javascript",
+  GitHub: "github",
 };
 
 export function techIconSrc(name: string): string | null {
   const file = techIcons[name];
   return file ? `/tech/${file}.png` : null;
+}
+
+/** Open off-site http(s) links in a new tab. */
+export function externalLinkProps(href: string) {
+  if (/^https?:\/\//i.test(href)) {
+    return { target: "_blank" as const, rel: "noopener noreferrer" };
+  }
+  return {};
 }
 
 export type Project = {
@@ -58,6 +92,8 @@ export type Project = {
   stack: string[];
   href?: string;
   year: string;
+  /** Optional mark in /public — shown in the project tile. */
+  logo?: string | null;
 };
 
 export type Experience = {
@@ -77,13 +113,31 @@ export type Experience = {
    * Example: drop `public/logos/northrop.png` → logo: "/logos/northrop.png"
    */
   logo?: string | null;
+  /** Render a dark mono mark as white on the charcoal stage. */
+  logoInvert?: boolean;
+};
+
+export type Education = {
+  id: string;
+  school: string;
+  degree: string;
+  period?: string;
+  summary?: string;
+  logo?: string | null;
 };
 
 export type Tool = {
   id: string;
   name: string;
-  use: string;
-  group: "Languages" | "Frameworks" | "AI" | "Infrastructure";
+  /** Optional short note — not shown on the icon-only stack page. */
+  use?: string;
+  group:
+    | "Languages"
+    | "Frontend"
+    | "Backend"
+    | "AI"
+    | "Platform"
+    | "Integrations";
 };
 
 export type Post = {
@@ -95,33 +149,34 @@ export type Post = {
   href?: string;
 };
 
+export const education: Education[] = [
+  {
+    id: "byu",
+    school: "Brigham Young University",
+    degree: "B.S. Computer Science",
+    summary: "Computer Science coursework with teaching and research assistant roles.",
+    logo: "/logos/byu.png",
+  },
+  {
+    id: "sandbox",
+    school: "Sandbox",
+    degree: "Startup Incubator",
+    summary:
+      "Member of the SB04 cohort. Built and iterated on an early-stage product inside BYU's Sandbox startup incubator.",
+    logo: "/logos/sandbox.png",
+  },
+];
+
 export const projects: Project[] = [
   {
-    id: "signal-router",
-    title: "Signal Router",
+    id: "ssn",
+    title: "Sport Science Network",
     summary:
-      "Placeholder project. Describe the problem, what you built, and the outcome.",
-    stack: ["TypeScript", "Next.js"],
-    year: "2025",
-    href: "#",
-  },
-  {
-    id: "lattice-cli",
-    title: "Lattice CLI",
-    summary:
-      "Placeholder project. Swap this for a real tool, library, or product you shipped.",
-    stack: ["Rust", "CLI"],
-    year: "2024",
-    href: "#",
-  },
-  {
-    id: "agent-desk",
-    title: "Agent Desk",
-    summary:
-      "Placeholder project. Note the AI-native angle and what made the system trustworthy.",
-    stack: ["Python", "Agents", "Eval"],
-    year: "2024",
-    href: "#",
+      "Full-stack site for the Sport Science Network with event registration and Stripe payments — processed $190k+ in transactions in 4 months with 0 failures.",
+    stack: ["Next.js", "TypeScript", "Tailwind", "Supabase", "Postgres", "Stripe", "Resend", "AWS"],
+    year: "2026",
+    href: "https://www.sportsciencenetwork.com",
+    logo: "/logos/ssn.png",
   },
 ];
 
@@ -134,7 +189,7 @@ export const experience: Experience[] = [
     summary:
       "Building AI-powered internal tools and infrastructure automation for corporate leadership.",
     bullets: [
-      "Building an AI-powered web application that transforms unstructured notes into organized knowledge, actionable tasks, priorities, and due dates.",
+      "Built an AI-powered web application that transforms unstructured notes into organized knowledge, actionable tasks, priorities, and due dates.",
       "Built a web application demonstrating AI capabilities and use cases to senior stakeholders, including a mini CRM that enables non-developers to manage and update showcased use cases without modifying code.",
       "Built and maintained Ansible playbooks and roles to automate VM provisioning, configuration, and operational workflows, reducing manual intervention in infrastructure tasks.",
       "Resolved 200+ infrastructure and automation-related incidents, identifying recurring failure patterns and converting them into reusable automation improvements.",
@@ -144,8 +199,8 @@ export const experience: Experience[] = [
   },
   {
     slug: "self-employed",
-    company: "Self-Employed",
-    title: "Freelance Web Developer",
+    company: "Freelance Work",
+    title: "Freelance Software Engineer",
     period: "Aug 2025 — Present",
     summary:
       "Shipping full-stack client websites with payments, registration, and SEO.",
@@ -154,8 +209,17 @@ export const experience: Experience[] = [
       "Implemented a payment and registration system that processed $28k+ in transactions in 2 months with 0 failures.",
       "Delivered 3+ client websites, implementing SEO, lead capture forms, and analytics to support customer acquisition.",
     ],
-    stack: ["Next.js", "Supabase", "Stripe"],
-    logo: null,
+    stack: [
+      "Next.js",
+      "Tailwind",
+      "Supabase",
+      "Postgres",
+      "Stripe",
+      "Resend",
+      "AWS",
+    ],
+    logo: "/logos/napkin-systems.png",
+    logoInvert: true,
   },
   {
     slug: "noodle-journal",
@@ -170,8 +234,31 @@ export const experience: Experience[] = [
       "Acquired 70+ paying users through demos, user feedback, and iterative product improvements.",
       "Presented product at RootsTech 2025, engaging with hundreds of attendees and gathering customer insights.",
     ],
-    stack: ["Vue.js", "Laravel", "Supabase"],
+    stack: [
+      "Vue.js",
+      "Laravel",
+      "Tailwind",
+      "Supabase",
+      "Postgres",
+      "AWS",
+      "Twilio",
+      "Stripe",
+    ],
     logo: "/logos/noodle-journal.png",
+  },
+  {
+    slug: "byu",
+    company: "Brigham Young University",
+    title: "Teaching Assistant & Research Assistant",
+    period: "2021 — 2024",
+    summary:
+      "Supported Computer Science courses and faculty research while completing a CS degree.",
+    bullets: [
+      "Served as a Teaching Assistant for Computer Science courses, helping students through labs, assignments, and core programming concepts.",
+      "Worked as a Research Assistant supporting faculty research projects in the Computer Science department.",
+    ],
+    stack: ["React", "Python"],
+    logo: "/logos/byu.png",
   },
 ];
 
@@ -180,32 +267,39 @@ export function getExperience(slug: string): Experience | undefined {
 }
 
 export const tools: Tool[] = [
-  { id: "ts", name: "TypeScript", use: "Product code", group: "Languages" },
-  { id: "py", name: "Python", use: "Data & agents", group: "Languages" },
-  { id: "next", name: "Next.js", use: "Web apps", group: "Frameworks" },
-  { id: "react", name: "React", use: "Interfaces", group: "Frameworks" },
-  { id: "claude", name: "Claude", use: "Agentic coding", group: "AI" },
-  { id: "evals", name: "Evals", use: "Model quality", group: "AI" },
-  { id: "pg", name: "Postgres", use: "Storage", group: "Infrastructure" },
-  { id: "vercel", name: "Vercel", use: "Deploys", group: "Infrastructure" },
+  { id: "ts", name: "TypeScript", group: "Languages" },
+  { id: "js", name: "JavaScript", group: "Languages" },
+  { id: "py", name: "Python", group: "Languages" },
+  { id: "java", name: "Java", group: "Languages" },
+  { id: "php", name: "PHP", group: "Languages" },
+  { id: "next", name: "Next.js", group: "Frontend" },
+  { id: "react", name: "React", group: "Frontend" },
+  { id: "vue", name: "Vue.js", group: "Frontend" },
+  { id: "tailwind", name: "Tailwind", group: "Frontend" },
+  { id: "shadcn", name: "shadcn/ui", group: "Frontend" },
+  { id: "node", name: "Node.js", group: "Backend" },
+  { id: "pg", name: "Postgres", group: "Backend" },
+  { id: "trpc", name: "tRPC", group: "Backend" },
+  { id: "better-auth", name: "Better Auth", group: "Backend" },
+  { id: "laravel", name: "Laravel", group: "Backend" },
+  { id: "spring", name: "Spring Boot", group: "Backend" },
+  { id: "vercel-ai-sdk", name: "Vercel AI SDK", group: "AI" },
+  { id: "mcp", name: "MCP", group: "AI" },
+  { id: "claude-code", name: "Claude Code", group: "AI" },
+  { id: "cursor", name: "Cursor", group: "AI" },
+  { id: "openai", name: "OpenAI Agents SDK", group: "AI" },
+  { id: "aws", name: "AWS", group: "Platform" },
+  { id: "supabase", name: "Supabase", group: "Platform" },
+  { id: "vercel", name: "Vercel", group: "Platform" },
+  { id: "openshift", name: "OpenShift", group: "Platform" },
+  { id: "ansible", name: "Ansible", group: "Platform" },
+  { id: "github", name: "GitHub", group: "Platform" },
+  { id: "stripe", name: "Stripe", group: "Integrations" },
+  { id: "resend", name: "Resend", group: "Integrations" },
+  { id: "twilio", name: "Twilio", group: "Integrations" },
 ];
 
-export const posts: Post[] = [
-  {
-    id: "post-1",
-    title: "Placeholder post title",
-    summary: "One line on what the post argues. Replace in lib/content.ts.",
-    date: "2026-09-01",
-    readTime: "6 min",
-  },
-  {
-    id: "post-2",
-    title: "Another placeholder post",
-    summary: "Keep summaries to one sentence so the list stays scannable.",
-    date: "2026-07-14",
-    readTime: "4 min",
-  },
-];
+export const posts: Post[] = [];
 
 export const formatDate = (iso: string) =>
   new Date(`${iso}T00:00:00`).toLocaleDateString("en-US", {

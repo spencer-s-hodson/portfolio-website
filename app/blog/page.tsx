@@ -14,7 +14,6 @@ export default function BlogPage() {
         bright="Notes"
         dim="& Writing"
         lede="Working notes on building software with AI in the loop."
-        note="Placeholder posts · replace in lib/content.ts"
       />
       <div className="page-body">
         <PostList items={posts} />

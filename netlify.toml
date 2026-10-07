@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"
+  publish = "out"
+
+# Static export — skip the Next.js runtime so Netlify serves `out/` as plain HTML
+# and can detect forms from the built pages.
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"

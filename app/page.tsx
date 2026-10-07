@@ -1,18 +1,22 @@
 import Link from "next/link";
+import { ArrowRightIcon } from "@/components/icons";
 import {
-  ArrowRightIcon,
-  BriefcaseIcon,
-  FolderIcon,
-} from "@/components/icons";
-import {
+  EducationList,
   ExperienceList,
   PostList,
   ProjectList,
   Section,
-  ToolGrid,
   TwoTone,
 } from "@/components/sections";
-import { experience, posts, projects, site, tools } from "@/lib/content";
+import { TechMarquee } from "@/components/TechMarquee";
+import { education, experience, posts, projects, site, tools } from "@/lib/content";
+
+const marqueeTools = tools.filter(
+  (tool) =>
+    tool.group === "Languages" ||
+    tool.group === "Frontend" ||
+    tool.group === "Backend",
+);
 
 export default function HomePage() {
   return (
@@ -26,55 +30,108 @@ export default function HomePage() {
         />
         <p className="lede mt-7">{site.supportingLine}</p>
 
-        <dl className="counts">
-          {site.stats.map(({ value, label }) => (
-            <div key={label.join(" ")}>
-              <dt className="count-label">
-                {label[0]}
-                <br />
-                {label[1]}
-              </dt>
-              <dd className="count-value display">
-                {String(value).padStart(2, "0")}
-              </dd>
-            </div>
-          ))}
-        </dl>
-
         <div className="feature-cards">
           <Link href="/projects" className="feature-card feature-mark">
             <svg
               className="feature-art"
               viewBox="0 0 320 260"
-              preserveAspectRatio="none"
+              preserveAspectRatio="xMidYMid slice"
               aria-hidden="true"
             >
-              <path d="M210 -10c-40 60 40 90 10 150s-140 40-170 130" />
-              <path d="M330 40c-60 10-50 80-110 100" />
+              <path
+                className="feature-stroke"
+                d="M210 -10c-40 60 40 90 10 150s-140 40-170 130"
+              />
+              <path
+                className="feature-stroke"
+                d="M330 40c-60 10-50 80-110 100"
+              />
             </svg>
-            <FolderIcon className="feature-icon" />
             <span className="feature-title display">Projects</span>
             <span className="feature-go" aria-hidden="true">
               <ArrowRightIcon className="h-4 w-4" />
             </span>
           </Link>
+
           <Link href="/experience" className="feature-card feature-lime">
             <svg
               className="feature-art"
               viewBox="0 0 320 260"
-              preserveAspectRatio="none"
+              preserveAspectRatio="xMidYMid slice"
               aria-hidden="true"
             >
-              <path d="M-10 230 50 40l40 150 60-170 50 190 50-150 40 120 50-160" />
+              <path
+                className="feature-stroke"
+                d="M-10 230 50 40l40 150 60-170 50 190 50-150 40 120 50-160"
+              />
             </svg>
-            <BriefcaseIcon className="feature-icon" />
             <span className="feature-title display">Experience</span>
+            <span className="feature-go" aria-hidden="true">
+              <ArrowRightIcon className="h-4 w-4" />
+            </span>
+          </Link>
+
+          <Link href="/tech" className="feature-card feature-violet">
+            <svg
+              className="feature-art"
+              viewBox="0 0 320 260"
+              preserveAspectRatio="xMidYMid slice"
+              aria-hidden="true"
+            >
+              <rect
+                className="feature-fill"
+                x="190"
+                y="-10"
+                width="100"
+                height="100"
+                transform="rotate(16 240 40)"
+              />
+              <rect
+                className="feature-fill"
+                x="235"
+                y="85"
+                width="130"
+                height="130"
+                transform="rotate(-14 300 150)"
+              />
+              <rect
+                className="feature-fill"
+                x="155"
+                y="155"
+                width="78"
+                height="78"
+                transform="rotate(26 194 194)"
+              />
+              <circle className="feature-fill" cx="55" cy="205" r="52" />
+            </svg>
+            <span className="feature-title display">Stack</span>
+            <span className="feature-go" aria-hidden="true">
+              <ArrowRightIcon className="h-4 w-4" />
+            </span>
+          </Link>
+
+          <Link href="/blog" className="feature-card feature-cyan">
+            <svg
+              className="feature-art"
+              viewBox="0 0 320 260"
+              preserveAspectRatio="xMidYMid slice"
+              aria-hidden="true"
+            >
+              <circle className="feature-ring" cx="250" cy="30" r="64" />
+              <circle className="feature-ring" cx="250" cy="30" r="104" />
+              <circle className="feature-ring" cx="250" cy="30" r="144" />
+            </svg>
+            <span className="feature-title display">Blog</span>
             <span className="feature-go" aria-hidden="true">
               <ArrowRightIcon className="h-4 w-4" />
             </span>
           </Link>
         </div>
       </header>
+
+      <Section id="education" bright="School" dim="Path">
+        <EducationList items={education} />
+      </Section>
 
       <Section
         id="projects"
@@ -98,30 +155,21 @@ export default function HomePage() {
         id="tech"
         bright="Tech"
         dim="Stack"
-        more={{ href: "/tech", label: "Whole stack" }}
+        more={{ href: "/tech", label: "Full tech stack" }}
       >
-        <ToolGrid items={tools.slice(0, 6)} />
+        <TechMarquee items={marqueeTools} />
       </Section>
 
-      <Section
-        id="blog"
-        bright="Notes"
-        dim="& Writing"
-        more={{ href: "/blog", label: "All posts" }}
-      >
-        <PostList items={posts.slice(0, 2)} />
-      </Section>
-
-      <section className="home-section contact" aria-labelledby="contact-title">
-        <TwoTone id="contact-title" bright="Let's work" dim="together" />
-        <p className="lede mt-6">
-          Hiring for a full-time role, or need a contract engineer? The inbox
-          is open.
-        </p>
-        <a href={`mailto:${site.email}`} className="stamp mt-8">
-          {site.email}
-        </a>
-      </section>
+      {posts.length > 0 ? (
+        <Section
+          id="blog"
+          bright="Notes"
+          dim="& Writing"
+          more={{ href: "/blog", label: "All posts" }}
+        >
+          <PostList items={posts.slice(0, 2)} />
+        </Section>
+      ) : null}
     </main>
   );
 }

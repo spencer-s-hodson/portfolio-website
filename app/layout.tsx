@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
+import { ContactCTA } from "@/components/ContactCTA";
 import { PillNav } from "@/components/PillNav";
 import { ProfileCard } from "@/components/ProfileCard";
 import { site } from "@/lib/content";
@@ -46,6 +47,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </aside>
           <div className="shell-main" id="content">
             {children}
+            <ContactCTA />
             <footer className="site-footer">
               © {new Date().getFullYear()} {site.name}
             </footer>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { site } from "@/lib/content";
+import { externalLinkProps, site } from "@/lib/content";
 import { GitHubIcon, InstagramIcon, LinkedInIcon, MailIcon, XIcon } from "./icons";
 
 const socials = [
@@ -42,7 +42,12 @@ export function ProfileCard() {
       <ul className="profile-socials" aria-label="Elsewhere">
         {socials.map(({ href, label, Icon }) => (
           <li key={label}>
-            <a href={href} aria-label={label} className="profile-social">
+            <a
+              href={href}
+              aria-label={label}
+              className="profile-social"
+              {...externalLinkProps(href)}
+            >
               <Icon className="h-[1.35rem] w-[1.35rem]" />
             </a>
           </li>
