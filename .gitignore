@@ -33,8 +33,16 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
-# vercel
+# vercel / netlify local
 .vercel
+.netlify
+
+# browser / agent tooling noise
+.playwright-mcp/
+
+# impeccable local + cache (keep briefs/surfaces/design committed)
+.impeccable/hook.cache.json
+.impeccable/config.local.json
 
 # typescript
 *.tsbuildinfo
