@@ -574,6 +574,40 @@ ul {
   transform: translateX(3px);
 }
 
+@media (max-width: 640px) {
+  .feature-cards {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .feature-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 5.75rem;
+    padding: 1.15rem 1.15rem;
+  }
+
+  .feature-title {
+    max-width: none;
+    padding-right: 0;
+    font-size: clamp(1.35rem, 6.5vw, 1.65rem);
+  }
+
+  .feature-go {
+    position: static;
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    transform: none;
+  }
+
+  .feature-card:hover .feature-go {
+    transform: translateX(3px);
+  }
+}
+
 /* ---------- Sections ---------- */
 
 .home-section {
@@ -1437,6 +1471,21 @@ a.row:hover .project-tile-img {
 /* ---------- Small screens ---------- */
 
 @media (max-width: 640px) {
+  .shell {
+    gap: 2.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .counts {
+    gap: 1.5rem 2rem;
+    margin-top: 2.5rem;
+  }
+
+  .count-value {
+    font-size: clamp(2.75rem, 14vw, 3.75rem);
+  }
+
   .row-project {
     grid-template-columns: auto 1fr;
     align-items: start;
@@ -1468,12 +1517,27 @@ a.row:hover .project-tile-img {
     grid-template-columns: 1fr;
   }
 
+  .pill-nav {
+    gap: 0.1rem;
+    padding: 0.3rem;
+    max-width: calc(100vw - 1rem);
+  }
+
   .pill-link {
-    width: 2.85rem;
+    width: 2.55rem;
+    height: 2.7rem;
   }
 
   .pill-tip {
     display: none;
+  }
+
+  .tech-marquee-label {
+    font-size: 0.85rem;
+  }
+
+  .contact-cta {
+    max-width: none;
   }
 }
 

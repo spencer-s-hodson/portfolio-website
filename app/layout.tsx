@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
-import { ContactCTA } from "@/components/ContactCTA";
-import { PillNav } from "@/components/PillNav";
-import { ProfileCard } from "@/components/ProfileCard";
+import { ContactCTA } from "@/components/contact-cta";
+import { PillNav } from "@/components/pill-nav";
+import { ProfileCard } from "@/components/profile-card";
 import { site } from "@/lib/content";
 import "./globals.css";
 

@@ -8,7 +8,7 @@ import {
   Section,
   TwoTone,
 } from "@/components/sections";
-import { TechMarquee } from "@/components/TechMarquee";
+import { TechMarquee } from "@/components/tech-marquee";
 import { education, experience, posts, projects, site, tools } from "@/lib/content";
 
 const marqueeTools = tools.filter(

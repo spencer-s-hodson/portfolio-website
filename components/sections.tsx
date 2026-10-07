@@ -12,7 +12,7 @@ import {
   type Tool,
 } from "@/lib/content";
 import { ArrowRightIcon, ArrowUpRightIcon } from "./icons";
-import { StackIcons } from "./StackIcons";
+import { StackIcons } from "./stack-icons";
 
 export function TwoTone({
   bright,
