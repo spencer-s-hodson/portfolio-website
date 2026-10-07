@@ -196,6 +196,17 @@ ul {
   background: var(--mark);
 }
 
+.pill-link-contact {
+  color: var(--mark);
+  opacity: 1;
+}
+
+.pill-link-contact:hover,
+.pill-link-contact:focus-visible {
+  color: var(--mark);
+  background: color-mix(in srgb, var(--mark) 18%, transparent);
+}
+
 .pill-tip {
   position: absolute;
   top: calc(100% + 0.65rem);
@@ -1181,6 +1192,7 @@ a.row:hover .project-tile-img {
 .contact-cta {
   margin-top: clamp(5rem, 10vw, 7.5rem);
   max-width: 40rem;
+  scroll-margin-top: calc(var(--nav-h) + 1.25rem);
 }
 
 .contact-lede {
@@ -1303,6 +1315,16 @@ a.row:hover .project-tile-img {
 }
 
 .contact-submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.contact-submit:disabled:hover {
+  background: var(--mark);
+  transform: none;
+}
+
+.contact-submit-busy:disabled {
   cursor: wait;
   opacity: 0.75;
 }
@@ -1322,6 +1344,86 @@ a.row:hover .project-tile-img {
 
 .contact-form-error {
   color: color-mix(in srgb, var(--mark) 72%, var(--text) 28%);
+}
+
+.contact-success {
+  display: grid;
+  justify-items: start;
+  gap: 0.85rem;
+  margin-top: 2.25rem;
+  padding: 1.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--lime) 12%, var(--stage-raise));
+  outline: none;
+  animation: contact-success-in var(--clock) var(--ease-out) both;
+}
+
+.contact-success-mark {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  background: var(--lime);
+  color: var(--card-ink);
+}
+
+.contact-success-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.contact-success-title {
+  margin: 0.15rem 0 0;
+  font-family: var(--font-bricolage), sans-serif;
+  font-size: clamp(1.45rem, 3vw, 1.85rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.contact-success-copy {
+  margin: 0;
+  max-width: 28rem;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--text-soft);
+  text-wrap: pretty;
+}
+
+.contact-success-reset {
+  margin-top: 0.5rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--lime);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-underline-offset: 0.18em;
+  cursor: pointer;
+}
+
+.contact-success-reset:hover {
+  text-decoration: underline;
+}
+
+.contact-success-reset:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+@keyframes contact-success-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.6rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .site-footer {

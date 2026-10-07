@@ -119,6 +119,14 @@ export function MailIcon(props: IconProps) {
   );
 }
 
+export function CheckIcon(props: IconProps) {
+  return (
+    <Stroke {...props} width={2.25}>
+      <path d="M5 12.5 9.5 17 19 7" />
+    </Stroke>
+  );
+}
+
 export function GitHubIcon(props: IconProps) {
   return (
     <Stroke {...props}>
