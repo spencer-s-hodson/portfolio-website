@@ -28,6 +28,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full">
+        {site.portrait ? (
+          <link rel="preload" as="image" href={site.portrait} fetchPriority="high" />
+        ) : null}
         <a href="#content" className="skip-link">
           Skip to content
         </a>

@@ -286,6 +286,11 @@ ul {
     linear-gradient(160deg, var(--mark) 0%, #c93b0a 100%);
 }
 
+/* Quiet placeholder while the photo arrives — avoids the orange flash. */
+.profile-portrait--photo {
+  background: #2a2f36;
+}
+
 .profile-monogram {
   font-family: var(--font-poppins), sans-serif;
   font-weight: 800;

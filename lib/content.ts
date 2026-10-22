@@ -11,8 +11,8 @@ export const site = {
   supportingLine:
     "I build AI-native systems like agents, MCP servers, automations, and web apps. I love building things that save time, make money, and solve problems in my own life.",
   cardLine: "A software engineer with a bias for shipping",
-  /** Drop a portrait at /public/portrait.jpg and set this to "/portrait.jpg". */
-  portrait: "/portrait.jpg" as string | null,
+  /** Drop a portrait in /public and set this path (e.g. "/spencer.jpg"). */
+  portrait: "/spencer.jpg" as string | null,
   email: "spencer.s.hodson@gmail.com",
   location: "Lehi, UT",
   links: {

@@ -18,15 +18,20 @@ const initials = site.name
 export function ProfileCard({ priority = false }: { priority?: boolean }) {
   return (
     <article className="profile-card" aria-label={`${site.name}, profile`}>
-      <div className="profile-portrait">
+      <div
+        className={
+          site.portrait ? "profile-portrait profile-portrait--photo" : "profile-portrait"
+        }
+      >
         {site.portrait ? (
           <Image
             src={site.portrait}
             alt={`Portrait of ${site.name}`}
             fill
             sizes="(min-width: 1024px) 300px, 80vw"
-            className="object-cover"
+            className="object-cover object-[center_28%] scale-[1.18]"
             priority={priority}
+            fetchPriority={priority ? "high" : "auto"}
           />
         ) : (
           <span className="profile-monogram" aria-hidden="true">
